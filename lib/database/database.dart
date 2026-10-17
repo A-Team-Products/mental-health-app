@@ -2,7 +2,7 @@ import 'package:drift/drift.dart';
 import 'package:drift_flutter/drift_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 
-part 'database.g.dart';
+/*part 'database.g.dart';
 
 class DayData extends Table {
   IntColumn get id => integer().autoIncrement()();
@@ -12,6 +12,7 @@ class DayData extends Table {
 }
 
 @DriftDatabase(tables: [DayData])
-class DayDatabase extends _$AppDatabase {
+class DayDatabase extends _$DayDatabase {
   DayDatabase() : super(driftDatabase(name: 'day_database'));
 }
+*/
