@@ -1,6 +1,9 @@
 import "dart:math";
 
+const NUM_PRIMARY_EMOTIONS = 8;
+
 enum Emotion {
+  // Primary Emotions
   joy,
   trust,
   fear,
@@ -38,14 +41,19 @@ enum Emotion {
   anxiety
 }
 
+
+
 Emotion combineEmotions(Emotion a, Emotion b) {
   int distance = (Emotion.values.indexOf(a) - Emotion.values.indexOf(b)).abs();
-  distance = min(distance, 8 - distance);
+  if (Emotion.values.indexOf(a) >= 8 || Emotion.values.indexOf(b) >= 8) {
+    throw ArgumentError('Emotion must be primary');
+  }
+
   switch (a) {
     case Emotion.joy:
-
+      
     case Emotion.trust:
-
+    
     case Emotion.fear:
 
     case Emotion.surprise:
@@ -59,7 +67,8 @@ Emotion combineEmotions(Emotion a, Emotion b) {
     case Emotion.anticipation:
 
     default:
-
-
+      throw ArgumentError('Emotion must be primary');
   }
+
+
 }

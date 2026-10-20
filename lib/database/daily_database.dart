@@ -8,8 +8,10 @@ part 'daily_database.g.dart';
 
 class DailyData extends Table {
   IntColumn get id => integer().autoIncrement()();
+  IntColumn get sleepTime => integer().nullable()();
+  IntColumn get stepCount => integer().nullable()();
   TextColumn get journalEntry => text().nullable()();
-  TextColumn get emotion => textEnum<Emotion>()();
+  TextColumn get emotion => textEnum<Emotion>().nullable()();
   DateTimeColumn get createdAt => dateTime()();
 }
 
